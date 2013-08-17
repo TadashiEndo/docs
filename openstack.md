@@ -34,11 +34,12 @@ IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 EOF
 ```
-空白で　Enter
-yum -y install qpid-cpp-server
-echo auth=1 >> /etc/qpidd.conf
-chkconfig qpidd on
+空白で　Enter  
+yum -y install qpid-cpp-server  
+echo auth=1 >> /etc/qpidd.conf  
+chkconfig qpidd on  
 エラー
-auth=1 をコメントあうと
+auth=1 をコメントアウト 
 
+rpm -i http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm  
 
