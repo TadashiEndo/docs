@@ -1,4 +1,5 @@
 # install openstack for centos on virturlbox
+<http://docs.openstack.org/grizzly/basic-install/yum/content/basic-install_controller.html#basic-install_controller-common>
 >
 eth1の追加  
 yum install -y ntp  
