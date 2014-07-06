@@ -4,7 +4,7 @@
 ```
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install puppet puppet-master
+sudo apt-get install puppet puppetmaster
 ```
 
 ## settings
