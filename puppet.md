@@ -129,5 +129,5 @@ sudo puppet cert sign hoge.localdomain
 # clientsでもう一回
 ```
 sudo puppet agent --enable
-sudp puppet agent --test
+sudo puppet agent --test
 ```
