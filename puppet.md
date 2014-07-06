@@ -4,7 +4,7 @@
 ```
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install puppet puppetmaster
+sudo apt-get install puppet puppetmaster -y
 ```
 
 ## settings
@@ -106,7 +106,7 @@ total 16
 
 # clients
 ```
-sudo apt-get install puppet
+sudo apt-get install puppet -y
 ```
 
 /etc/puppet/puppet.conf  
@@ -117,4 +117,17 @@ server=livaserver.localdomain
 
 ```
 sudo puppet agent --test
+```
+
+# masterでcert認識
+
+```
+sudo puppet cert list
+sudo puppet cert sign hoge.localdomain
+```
+
+# clientsでもう一回
+```
+sudo puppet agent --enable
+sudp puppet agent --test
 ```
