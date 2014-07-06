@@ -8,7 +8,8 @@ sudo apt-get install puppet puppet-master
 ```
 
 ## settings
-``` /etc/puppet/manifests/site.pp
+/etc/puppet/manifests/site.pp  
+```
 # group add
 group { "ogalush":
 gid => 1001,
