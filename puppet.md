@@ -106,8 +106,10 @@ total 16
 
 # clients
 ```
+sudo apt-get install puppet
+```
 
-
+/etc/puppet/puppet.conf  
 ```
 [agent]
 server=livaserver.localdomain
