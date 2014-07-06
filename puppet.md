@@ -1,4 +1,4 @@
-# puppet
+# puppetmaster
 
 ## install
 ```
@@ -96,10 +96,23 @@ content => "tendo ALL=(ALL) ALL",
 }
 ```
 
-# files
+## files
 ```
 $ ls -tarl /etc/puppet/modules/authorized_keys/files
 total 16
 -rw-r--r-- 1 ogalush    1000  396 Jun  1 01:41 ogalush_keys
 -rw-r--r-- 1 tendo   ogalush  404 Jun  1 13:08 tendo_keys
+```
+
+# clients
+```
+
+
+```
+[agent]
+server=livaserver.localdomain
+```
+
+```
+sudo puppet agent --test
 ```
