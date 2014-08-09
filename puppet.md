@@ -115,6 +115,7 @@ sudo apt-get install puppet -y
 server=livaserver.localdomain
 ```
 
+
 ```
 sudo puppet agent --test
 ```
