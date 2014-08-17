@@ -96,28 +96,29 @@ content => "tendo ALL=(ALL) ALL",
 }
 
 # sensu client
-exec { 'sensu client install',
-path => ['/usr/bin'],
-command => 'apt get install -y sensu',
-refreshonly => true,
+exec { 'sudo apt-get update':
+path => ['/usr/bin']
 }
+
+exec { 'sudo apt-get -y install sensu --force-yes':
+path => ['/usr/bin']
+}
+
 file { "/etc/sensu/conf.d/client.json":
-$str= "{
-  ¥"client¥": ¥{
-    ¥"name¥": ¥"$fqdn¥",
-    ¥"address¥": ¥"sensu.localdomain¥",
-    ¥"subscriptions¥": ¥[ ¥"all¥",¥"webservers¥" ¥]
-  ¥}
-}"
 mode => "0644",
 owner => "root",
 group => "root",
-content => "$str",
+content => "{
+  \"client\": {
+    \"name\": \"$fqdn\",
+    \"address\": \"sensu.localdomain\",
+    \"subscriptions\": [ \"all\",\"webservers\" ]
+  }
+}"
 }
-exec { 'sensu client start',
-path => ['/usr/sbin'],
-command => 'update-rc.d sensu-client defaults && /etc/init.d/sensu-client start',
-refreshonly => true,
+
+exec { 'sudo update-rc.d sensu-client defaults && sudo /etc/init.d/sensu-client start':
+path => ['/usr/bin', '/usr/sbin'],
 }
 
 ```
